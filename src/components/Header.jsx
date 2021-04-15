@@ -1,5 +1,5 @@
 import logoSvg from "../assets/img/pizza-logo.svg";
-import classnames from "classnames";
+import {Link} from 'react-router-dom'
 import React from "react";
 
 
@@ -16,6 +16,7 @@ import React from "react";
                     </div>
                 </div>
                 <div className="header__cart">
+
                     <a href="/cart.html" className="button button--cart">
                         <span>520 ₽</span>
                         <div className="button__delimiter"></div>

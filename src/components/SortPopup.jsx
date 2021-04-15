@@ -5,7 +5,7 @@ function SortPopup({items}) {
     const [isVisible, setVisiblePopup] = useState(false)
     const [activeItem, setActiveItem] = useState(0)
     const sortRef = useRef(null);
-    const activeLabel = items[activeItem]
+    const activeLabel = items[activeItem];
     function toggleVisiblePopup() {
 
         setVisiblePopup(!isVisible)
@@ -31,6 +31,7 @@ function SortPopup({items}) {
         <div ref={sortRef} className="sort">
             <div className="sort__label">
                 <svg
+                    className={classnames({'rotated': isVisible})}
                     width="10"
                     height="6"
                     viewBox="0 0 10 6"
@@ -43,7 +44,7 @@ function SortPopup({items}) {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleVisiblePopup}>популярности</span>
+                <span onClick={toggleVisiblePopup}>{activeLabel}</span>
             </div>
             {
                 isVisible && (
