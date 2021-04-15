@@ -16,7 +16,7 @@ function App() {
                 <div className="container">
                     <div className="content__top">
                         <Categories onClickItem={handleCategoryClick} activeItemIndex={activeCategory} items={['Все', 'Мясные', 'Вегатарианская', 'Гриль', 'Острые', 'Закрытые']}/>
-                        <SortPopup/>
+                        <SortPopup items={['Популярности','Цене','Алфавиту']}/>
                     </div>
                     <h2 className="content__title">Все пиццы</h2>
                     <div className="content__items">
