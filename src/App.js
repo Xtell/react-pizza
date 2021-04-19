@@ -9,7 +9,7 @@ function App() {
 
     useEffect(() => {
 
-        fetch('http://localhost:3001/db.json').then(resp => resp.json()).then(json => setPizzas(json.pizzas))
+        fetch('http://localhost:3000/db.json').then(resp => resp.json()).then(json => setPizzas(json.pizzas))
     },[])
 
     return (

@@ -1,16 +1,21 @@
 import React, {useState} from 'react'
-
+import classnames from "classnames";
+import PropTypes from 'prop-types';
 function PizzaBlock({name, imageUrl, price, types, sizes}) {
+    const typeNames = ['Тонкое', 'Традиционное'];
+    const availableSizes = [26, 30, 40];
+    const [pastry, setPastry] = useState(types[0]);
+    const [size, setSize] = useState(availableSizes.indexOf(sizes[0]));
 
-    const [pastry, setPastry] = useState(0);
-    const [size, setSize] = useState(0);
 
     function handleChangePastry(index) {
         setPastry(index)
     }
+
     function handleChangeSize(index) {
         setSize(index)
     }
+
     return (
         <div className="pizza-block">
             <img
@@ -22,13 +27,23 @@ function PizzaBlock({name, imageUrl, price, types, sizes}) {
             <div className="pizza-block__selector">
                 <ul>
                     {
-                        types.map((type, index) => <li key={`${type}_${index}`} onClick={() => handleChangePastry(index)} className={pastry === index ? 'active' : ''}>{index === 0 ? 'Тонкое' : 'Традиционное'}</li>)
+                        typeNames.map((type, index) => (
+                            <li onClick={() => handleChangePastry(index)} key={`${type}_${index}`}
+                                className={classnames({
+                                    'active': index === pastry,
+                                    'disabled': !types.includes(index)
+                                })}>{type}</li>
+                        ))
                     }
 
                 </ul>
                 <ul>
                     {
-                        sizes.map((item, index) => <li onClick={() => handleChangeSize(index)}  key={`${item}_${index}`} className={size === index ? 'active' : ''}>{item}</li>)
+                        availableSizes.map((item, index) => <li onClick={() => handleChangeSize(index)} key={`${item}_${index}`} className={classnames({
+                            'active': index === size,
+                            'disabled': !sizes.includes(item)
+                        })}>{item} см. </li>)
+
                     }
                 </ul>
             </div>
