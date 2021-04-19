@@ -1,8 +1,8 @@
-import {Categories, SortPopup} from "../components";
+import {Categories, SortPopup, PizzaBlock} from "../components";
 import React, {useState} from "react";
 
 
-function Home() {
+function Home({items}) {
 
     const [activeCategory, setActiveCategory] = useState(0);
 
@@ -10,7 +10,6 @@ function Home() {
 
         setActiveCategory(index)
     }
-
     return (
         <div className="container">
             <div className="content__top">
@@ -20,6 +19,9 @@ function Home() {
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
+                {
+                    items.map((item) => <PizzaBlock key={item.id} {...item}/>)
+                }
 
             </div>
         </div>
