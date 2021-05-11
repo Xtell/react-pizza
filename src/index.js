@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
 import {BrowserRouter as Router} from 'react-router-dom'
 import './scss/app.scss';
 import App from './App';
