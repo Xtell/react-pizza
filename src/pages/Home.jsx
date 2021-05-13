@@ -10,12 +10,17 @@ function Home({items}) {
 
         setActiveCategory(index)
     }
+
     return (
         <div className="container">
             <div className="content__top">
                 <Categories onClickItem={handleCategoryClick} activeItemIndex={activeCategory}
                             items={['Все', 'Мясные', 'Вегатарианская', 'Гриль', 'Острые', 'Закрытые']}/>
-                <SortPopup items={['Популярности', 'Цене', 'Алфавиту']}/>
+                <SortPopup items={[{name: 'Популярности', type: 'popular'},
+                    {name: 'Цене', type: 'price'}, {
+                    name: 'Алфавиту',
+                    type: 'alphabet'
+                }]}/>
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
