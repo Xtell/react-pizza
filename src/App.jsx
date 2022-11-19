@@ -1,19 +1,19 @@
-import { ReactDemo } from "./components/index.js";
-import ReactDOM from "react-dom";
-export default class App {
-  els = {
-    root: "[data-js-root]"
-  }
+import { Header } from "./components/index.js";
+import { useEffect, useState } from "react";
 
-  constructor() {
-    this.rootElement = document.querySelector(this.els.root)
-    if (this.rootElement) {
-      this.root = ReactDOM.createRoot(this.rootElement)
-      this.render()
-    }
-  }
+function App() {
+  const [ data, setData ] = useState({})
 
-  render() {
-    this.root.render(<ReactDemo/>)
-  }
+  return (
+    <div className="app">
+      <div className="flow-container">
+        <div className="page">
+          <Header logoSrc="images/logo.png" logoTitle="REACT PIZZA" logoTagline="самая вкусная пицца во вселенной"/>
+        </div>
+      </div>
+
+    </div>
+  )
 }
+
+export default App

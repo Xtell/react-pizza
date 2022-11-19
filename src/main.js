@@ -1,8 +1,8 @@
 import "./css"
-import App from "./App.jsx";
+import Root from "./Root.jsx";
 
 function handleDomContentLoaded() {
-  new App()
+  new Root()
 }
 
 document.addEventListener("DOMContentLoaded", handleDomContentLoaded)

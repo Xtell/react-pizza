@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "header": {
+      "logoSrc": "images/logo.png",
+      "logoTitle": "REACT PIZZA",
+      "logoTagline": "самая вкусная пицца во вселенной",
+      "totalCartPrice": 520,
+      "totalCartCount": 3
+    }
+  }
+}
