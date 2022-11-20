@@ -1,4 +1,16 @@
 .cart-btn {
-  width: 100px;
-  background-color: tomato;
+  --cartBtnColGap: 12px;
+
+  &__body {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: var(--cartBtnColGap);
+    align-items: center;
+  }
+
+  &__total-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }

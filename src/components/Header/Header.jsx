@@ -17,8 +17,7 @@ function Header(props) {
           </div>
           <div className={getClassName("right")}>
             <div className={getClassName("cart-btn")}>
-              <CartBtn/>
-              <Btn iconBefore={<Icon name={"cart"}/>} label={"Кнопка"}/>
+              <CartBtn totalPrice={520} totalCount={3}/>
             </div>
           </div>
         </div>
