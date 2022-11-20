@@ -1,0 +1,1 @@
+export { default as getCN } from "./getCN"

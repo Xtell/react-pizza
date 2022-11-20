@@ -1,21 +1,25 @@
-import { Logo } from "../index.js";
-import { CartBtn } from "../index.js";
+import "./Header.pcss"
+import { CartBtn, Btn, Logo } from "../index.js";
 import { defaultProps } from "./defaultProps.jsx";
+import Icon from "../Icon/Icon.jsx";
 
 function Header(props) {
-  const { logoSrc, logoTitle, logoTagline } = props
+  const { logoSrc, logoTitle, logoTagline, getClassName } = props
 
   return (
-    <header className="header">
-      <div className="container header__inner">
-        <div className="header__left">
-          <div className="header__logo">
-            <Logo imageSrc={logoSrc} title={logoTitle} tagline={logoTagline}/>
+    <header className={getClassName()}>
+      <div className="container">
+        <div className={getClassName("inner")}>
+          <div className={getClassName("left")}>
+            <div className={getClassName("logo")}>
+              <Logo imageSrc={logoSrc} title={logoTitle} tagline={logoTagline}/>
+            </div>
           </div>
-        </div>
-        <div className="header__right">
-          <div className="header__cart-btn">
-            <CartBtn/>
+          <div className={getClassName("right")}>
+            <div className={getClassName("cart-btn")}>
+              <CartBtn/>
+              <Btn iconBefore={<Icon name={"cart"}/>} label={"Кнопка"}/>
+            </div>
           </div>
         </div>
       </div>
@@ -24,4 +28,5 @@ function Header(props) {
 }
 
 Header.defaultProps = defaultProps
+
 export default Header

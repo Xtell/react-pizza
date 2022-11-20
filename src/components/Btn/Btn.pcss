@@ -1,0 +1,38 @@
+.btn {
+  --btnPaddingY: 8px;
+  --btnPaddingX: 14px;
+  --btnColor: var(--colorWhite);
+  --btnBgColor: var(--colorPrimary);
+  --btnHoverBgColor: var(--colorPrimaryHover);
+  --btnHoverColor: var(--colorWhite);
+  --btnGap: 0 8px;
+  --btnIconSize: 12px;
+  --btnBorderRadius: 30px;
+  --btnBorderWidth: 1px;
+  --btnBorderStyle: solid;
+  --btnBorderColor: var(--colorPrimary);
+  --btnBorderHoverColor: var(--colorPrimaryHover);
+  --btnCursor: pointer;
+
+  --btnCurrentBgColor: var(--btnBgColor);
+  --btnCurrentColor: var(--btnColor);
+
+  display: flex;
+  align-items: center;
+  padding: var(--btnPaddingY) var(--btnPaddingX);
+  background-color: var(--btnCurrentBgColor);
+  color: var(--btnCurrentColor);
+  border: var(--btnBorderWidth) var(--btnBorderStyle) var(--btnBorderColor);
+  border-radius: var(--btnBorderRadius);
+  cursor: var(--btnCursor);
+
+  &:hover {
+    --btnCurrentBgColor: var(--btnHoverBgColor);
+    --btnCurrentColor: var(--btnHoverColor);
+  }
+  &__body {
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--btnGap);
+  }
+}

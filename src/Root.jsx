@@ -1,5 +1,4 @@
-import { ReactDemo } from "./components/index.js";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 export default class Root {
   els = {
